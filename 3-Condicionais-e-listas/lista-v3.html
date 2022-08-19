@@ -6,10 +6,10 @@
     <li v-for="(cor, i) in cores">{{ i }}) {{cor}}</li>
   </ul>
   <hr />
-  <div v-for="(cor, i) in cores">
+  <template v-for="(cor, i) in cores">
     <h1>{{ cor }}</h1>
     <p>{{ i }}</p>
-  </div>
+  </template>
 </div>
 <script>
   new Vue({
