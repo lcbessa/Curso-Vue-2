@@ -17,8 +17,8 @@ new Vue({
       this.monsterLife = 100;
     },
     attack(especial) {
-      this.hurt("playerLife", 5, 10, false);
-      this.hurt("monsterLife", 7, 12, especial);
+      this.hurt("playerLife", 7, 12, false);
+      this.hurt("monsterLife", 5, 10, especial);
     },
     hurt(prop, min, max, especial) {
       const plus = especial ? 5 : 0;
