@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import Menu from "./ComponenteMenu.vue";
-import Toolbar from "./ComponenteToolbar.vue";
-import Carousel from "./ComponenteCarousel.vue";
-import Footer from "./ComponenteFooter.vue";
+import Menu from "./components/template/ComponenteMenu.vue";
+import Toolbar from "./components/template/ComponenteToolbar.vue";
+import Carousel from "./components/widgets/ComponenteCarousel.vue";
+import Footer from "./components/template/ComponenteFooter.vue";
 
 export default {
   components: {
