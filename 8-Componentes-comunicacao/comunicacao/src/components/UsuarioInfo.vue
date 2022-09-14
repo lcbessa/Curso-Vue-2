@@ -3,6 +3,7 @@
         <h2>As Informações de Usuário</h2>
         <p>Vários detalhes...</p>
         <p>Nome do Usuário: <strong> {{inverterNome()}} </strong> </p>
+        <button @click="reiniciarNome">Reiniciar Nome</button>
     </div>
 </template>
 
@@ -12,11 +13,11 @@ export default {
     nome: {
       type: String,
       //   required: true,
-      default: function() {
-        return Array(10)
-          .fill(0)
-          .join(",");
-      },
+      //   default: function() {
+      //     return Array(10)
+      //       .fill(0)
+      //       .join(",");
+      //   },
     },
   },
   methods: {
@@ -25,6 +26,10 @@ export default {
         .split("")
         .reverse()
         .join("");
+    },
+    reiniciarNome() {
+      let nome = "Pedro";
+      this.$emit("nomeMudou", nome);
     },
   },
 };
