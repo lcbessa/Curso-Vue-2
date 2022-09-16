@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import barramento from "@/barramento";
+
 export default {
   props: {
     nome: {
@@ -36,6 +38,11 @@ export default {
       let nome = "Pedro";
       this.$emit("nomeMudou", nome);
     },
+  },
+  created() {
+    barramento.$on("idadeMudou", (idade) => {
+      this.idade = idade;
+    });
   },
 };
 </script>
