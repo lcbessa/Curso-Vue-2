@@ -13,7 +13,7 @@
 export default {
   data() {
     return {
-      ligado: true,
+      ligado: false,
     };
   },
 };

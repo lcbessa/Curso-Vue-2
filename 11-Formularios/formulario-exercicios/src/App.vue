@@ -18,10 +18,20 @@
         </Rotulo>
         <Rotulo nome="Características do Problema">
           <span class="mr-4"
-            ><input type="checkbox" value="reproduzivel" /> Reproduzível</span
+            ><input
+              type="checkbox"
+              v-model="caracteristicas"
+              value="reproduzivel"
+            />
+            Reproduzível</span
           >
           <span
-            ><input type="checkbox" value="intermitente" /> Intermitente</span
+            ><input
+              type="checkbox"
+              v-model="caracteristicas"
+              value="intermitente"
+            />
+            Intermitente</span
           >
         </Rotulo>
         <Rotulo nome="Qual produto?">
@@ -53,10 +63,13 @@
         </Rotulo>
         <Rotulo nome="Mensagem">
           <span style="white-space: pre">{{ mensagem }}</span>
-		  <pre></pre>
         </Rotulo>
         <Rotulo nome="Marque as Opções">
-          <span>???</span>
+          <span>
+            <ul>
+              <li v-for="c in caracteristicas" :key="c">{{ c }}</li>
+            </ul>
+          </span>
         </Rotulo>
         <Rotulo nome="Qual produto?">
           <span>???</span>
@@ -87,6 +100,7 @@ export default {
   data() {
     return {
       mensagem: "",
+      caracteristicas: [],
       usuario: {
         email: "",
         senha: "",
