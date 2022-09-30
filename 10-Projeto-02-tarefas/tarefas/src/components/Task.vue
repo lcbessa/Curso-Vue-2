@@ -1,6 +1,10 @@
 <template>
-  <div class="task" :class="stateClass">
-    <p>{{task.name}}</p>
+  <div
+    @click="$emit('taskStateChanged', task)"
+    class="task"
+    :class="stateClass"
+  >
+    <p>{{ task.name }}</p>
   </div>
 </template>
 
