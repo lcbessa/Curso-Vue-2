@@ -3,8 +3,9 @@ import App from "./App.vue";
 
 Vue.config.productionTip = false;
 Vue.directive("destaque", {
-  bind(el) {
-    el.style.backgroundColor = "lightgreen";
+  bind(binding) {
+    // el.style.backgroundColor = "lightgreen";
+    binding.style.backgroundColor = binding.value;
   },
 });
 new Vue({
