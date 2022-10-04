@@ -8,6 +8,7 @@ Vue.filter("inverter", function(valor) {
     .reverse()
     .join("");
 });
+
 new Vue({
   render: (h) => h(App),
 }).$mount("#app");
