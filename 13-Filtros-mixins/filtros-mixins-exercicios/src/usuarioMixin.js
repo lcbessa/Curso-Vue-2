@@ -4,4 +4,8 @@ export default {
       return "Maria Silva";
     },
   },
+
+  created() {
+    console.log("Created - Usuario Mixin!");
+  },
 };

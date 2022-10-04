@@ -9,8 +9,10 @@
 
 <script>
 import frutasMixin from "./frutasMixin";
+import usuarioMixin from "./usuarioMixin";
+
 export default {
-  mixins: [frutasMixin],
+  mixins: [frutasMixin, usuarioMixin],
 };
 </script>
 
