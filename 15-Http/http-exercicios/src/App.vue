@@ -4,7 +4,6 @@
     <b-card>
       <b-form-group label="Nome:">
         <b-form-input
-          required="true"
           type="text"
           size="lg"
           v-model="usuario.nome"
@@ -13,7 +12,6 @@
       </b-form-group>
       <b-form-group label="Email:">
         <b-form-input
-          required="true"
           type="email"
           size="lg"
           v-model="usuario.email"
