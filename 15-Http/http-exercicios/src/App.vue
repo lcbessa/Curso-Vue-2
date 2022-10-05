@@ -4,6 +4,7 @@
     <b-card>
       <b-form-group label="Nome:">
         <b-form-input
+          required="true"
           type="text"
           size="lg"
           v-model="usuario.nome"
@@ -12,6 +13,7 @@
       </b-form-group>
       <b-form-group label="Email:">
         <b-form-input
+          required="true"
           type="email"
           size="lg"
           v-model="usuario.email"
@@ -20,7 +22,19 @@
       </b-form-group>
       <hr />
       <b-button @click="salvar" size="lg" variant="primary">Salvar</b-button>
+
+      <b-button @click="buscar" size="lg" variant="success" class="ml-2"
+        >Obter Usuários</b-button
+      >
     </b-card>
+    <hr />
+    <b-list-group>
+      <b-list-group-item v-for="(usuario, id) in usuarios" :key="id">
+        <strong>Nome:</strong> {{ usuario.nome }} <br />
+        <strong>Email:</strong> {{ usuario.email }} <br />
+        <strong>ID:</strong> {{ id }} <br />
+      </b-list-group-item>
+    </b-list-group>
   </div>
 </template>
 
@@ -28,6 +42,7 @@
 export default {
   data() {
     return {
+      usuarios: [],
       usuario: {
         nome: "",
         email: "",
@@ -36,9 +51,14 @@ export default {
   },
   methods: {
     salvar() {
-      this.$http.post("usuarios.json", this.usuario).then((resp) => {
+      this.$http.post("usuarios.json", this.usuario).then(() => {
         this.usuario.nome = "";
         this.usuario.email = "";
+      });
+    },
+    buscar() {
+      this.$http.get("usuarios.json").then((resp) => {
+        this.usuarios = resp.data;
       });
     },
   },
