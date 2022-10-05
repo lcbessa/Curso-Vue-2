@@ -57,6 +57,7 @@ export default {
     buscar() {
       this.$http.get("usuarios.json").then((resp) => {
         this.usuarios = resp.data;
+        console.log(resp.data);
       });
     },
   },
