@@ -20,10 +20,10 @@ export default {
   },
   computed: {
     quantidade() {
-      return this.$store.state.quantidade;
+      return this.$store.state.parametros.quantidade;
     },
     preco() {
-      return this.$store.state.preco;
+      return this.$store.state.parametros.preco;
     },
   },
   methods: {
@@ -40,6 +40,9 @@ export default {
       // this.$store.state.produtos("adicionarProduto", produto);
       // this.adicionarProduto(produto);
       this.$store.dispatch("adicionarProduto", produto);
+      /* eslint-disable */
+      console.log(this.$store.getters.getNome);
+      console.log(this.$store.getters.getNomeCompleto);
     },
   },
 };
