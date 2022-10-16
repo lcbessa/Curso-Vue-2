@@ -2,10 +2,12 @@
   <v-flex class="pr-3 pb-3" xs12 md6 lg4>
     <v-card class="blue darken-3 white--text">
       <v-card-title class="headline">
-        <strong
-          >{{ stock.name }}
-          <small> (Preço: {{ stock.price }}) | {{ stock.quantity }} </small>
-        </strong>
+        <strong>
+          {{ stock.name }}
+          <small>
+            (Preço: {{ stock.price }}) | Qtd: {{ stock.quantity }})
+          </small></strong
+        >
       </v-card-title>
     </v-card>
     <v-card>
@@ -19,7 +21,7 @@
           class="blue darken-3 white--text"
           @click="sellStock"
           :disabled="quantity <= 0 || !Number.isInteger(quantity)"
-          >Vebder</v-btn
+          >Vender</v-btn
         >
       </v-container>
     </v-card>
@@ -35,7 +37,7 @@ export default {
     };
   },
   methods: {
-    buyStock() {
+    sellStock() {
       const order = {
         stockId: this.stock.id,
         stockPrice: this.stock.price,
