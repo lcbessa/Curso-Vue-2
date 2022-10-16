@@ -1,6 +1,6 @@
 <template>
   <v-toolbar app>
-    <v-toolbar-title class="headline text-uppercase mr-4" to="/">
+    <v-toolbar-title class="headline text-uppercase mr-4">
       <span>Stock</span>
       <span class="font-weigth-ligth">Trader</span>
     </v-toolbar-title>
@@ -23,12 +23,23 @@
           </v-list-tile>
         </v-list>
       </v-menu>
+      <v-layout align-center>
+        <span class="text-uppercase grey--text text--darken-2">
+          Saldo: {{ funds }}
+        </span>
+      </v-layout>
     </v-toolbar-items>
   </v-toolbar>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    funds() {
+      return this.$store.getters.funds;
+    },
+  },
+};
 </script>
 
 <style>
