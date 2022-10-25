@@ -52,6 +52,8 @@ export default {
   border-left: var(--door-border);
   border-top: var(--door-border);
   border-right: var(--door-border);
+
+  display: flex;
   justify-content: center;
   align-items: flex-end;
 }
