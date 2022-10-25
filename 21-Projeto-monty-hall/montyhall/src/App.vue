@@ -1,11 +1,16 @@
 <template>
   <div id="app">
     <h1>Problema de Monty Hall</h1>
+    <ComponenteGift> </ComponenteGift>
   </div>
 </template>
 
 <script>
-export default {};
+import ComponenteGift from "./components/ComponenteGift.vue";
+export default {
+  name: "App",
+  components: { ComponenteGift },
+};
 </script>
 
 <style>
